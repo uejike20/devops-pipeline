@@ -7,9 +7,16 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
-steps:
-  - name: Checkout code
-    uses: actions/checkout@v5
-    
-  - name: Run tests
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install C++ compiler
+        run: sudo apt-get update && sudo apt-get install -y g++
+
+      - name: Build C++ test (main.cpp)
+        run: g++ -std=c++17 main.cpp -o main_test
+
+      - name: Run C++ test
+        run: ./main_test
