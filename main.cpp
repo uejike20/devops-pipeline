@@ -11,5 +11,5 @@ using namespace std;
 int main(){
     cout << "Starting tests..." << endl;
     cout << "Processing..." << endl;
-    cout << "Completed!" 
+    cout << "Completed!" << endl;
 }
